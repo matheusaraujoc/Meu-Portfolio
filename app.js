@@ -36,13 +36,28 @@ async function loadPortfolio() {
  */
 function setupGlobalConfig(config) {
     document.title = config.siteTitle || "Portfólio";
+
+    // --- LÓGICA DO FAVICON ATUALIZADA ---
     if (config.favicon) {
-        let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-        link.type = 'image/ico';
-        link.rel = 'shortcut icon';
-        link.href = config.favicon;
+        let link = document.querySelector("link[rel='icon']") || document.createElement('link');
+        link.rel = 'icon';
+
+        // Define o TIPO (MIME type) com base na extensão do arquivo
+        if (config.favicon.endsWith('.ico')) {
+            link.type = 'image/x-icon';
+        } else if (config.favicon.endsWith('.png')) {
+            link.type = 'image/png';
+        } else if (config.favicon.endsWith('.svg')) {
+            link.type = 'image/svg+xml';
+        } else {
+            // Um palpite padrão se não for um dos acima
+            link.type = 'image/x-icon';
+        }
+
+        link.href = config.favicon; // Define o caminho (ex: "favicon.ico")
         document.getElementsByTagName('head')[0].appendChild(link);
     }
+    // --- FIM DA LÓGICA ATUALIZADA ---
 
     const footerName = document.getElementById('footer-name');
     if (footerName && config.hero && config.hero.title) {
