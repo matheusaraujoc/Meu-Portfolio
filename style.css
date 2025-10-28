@@ -1,0 +1,386 @@
+/* --- Variáveis Globais (A Nova Paleta Moderna) --- */
+:root {
+    /* Paleta de Cores (Dark Slate & Violet) */
+    --bg-color: #111827;
+    /* Fundo: Azul-ardósia escuro */
+    --card-color: #1F2937;
+    /* Cor dos Cards: Azul-ardósia mais claro */
+    --font-color: #F3F4F6;
+    /* Fonte Principal: Quase branco */
+    --font-color-secondary: #9CA3AF;
+    /* Fonte Secundária: Cinza claro */
+
+    /* Cor Primária (Agora um gradiente) */
+    --primary-gradient: linear-gradient(90deg, #8B5CF6 0%, #6366F1 100%);
+    --primary-color-solid: #8B5CF6;
+    /* Roxo/Violeta */
+    --primary-color-hover: #6366F1;
+    /* Azul/Índigo */
+
+    /* Configs de Layout */
+    --font-family: 'Inter', sans-serif;
+    --container-width: 1100px;
+}
+
+/* --- Reset Básico & Efeitos Globais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    line-height: 1.6;
+    /* Melhora a renderização das fontes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Barra de Rolagem Customizada --- */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--card-color);
+    border-radius: 20px;
+    border: 2px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primary-color-solid);
+}
+
+/* --- Container Principal & Seções --- */
+#app-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 80px 0;
+    /* Mais espaço vertical */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    /* Borda muito sutil */
+}
+
+section:last-of-type {
+    border-bottom: none;
+}
+
+/* --- Tipografia Moderna (Títulos com Gradiente) --- */
+h1,
+h2,
+h3 {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* O "truque" moderno: títulos em gradiente */
+h1,
+h2 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 2.8rem;
+    /* Um pouco maior */
+    text-align: center;
+}
+
+h3 {
+    color: var(--font-color);
+}
+
+/* --- 1. Seção Hero --- */
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* ===== AJUSTE FEITO AQUI ===== */
+    min-height: 50vh;
+    /* <<< Estava 70vh, agora está mais compacto */
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 4.5rem;
+    /* Maior e mais impactante */
+    font-weight: 900;
+    letter-spacing: -1.5px;
+    /* Espaçamento mais "apertado" */
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: var(--font-color-secondary);
+    /* Cor secundária */
+}
+
+/* --- 2. & 3. Seções de Portfólio (Vídeos) --- */
+.video-grid {
+    display: grid;
+    gap: 30px;
+}
+
+.projects-section .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.social-media-section .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+}
+
+.video-card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    /* Bordas mais arredondadas */
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    /* Borda sutil */
+    /* Sombra mais suave e moderna */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    /* Transição para o hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-8px);
+    /* Eleva o card */
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+    /* Sombra mais forte no hover */
+}
+
+.video-embed {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.embed-16-9 {
+    padding-bottom: 56.25%;
+}
+
+.embed-vertical {
+    padding-bottom: 177.77%;
+    max-height: 600px;
+    margin: 0 auto;
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    font-size: 1.4rem;
+}
+
+.video-info p {
+    font-size: 1rem;
+    color: var(--font-color-secondary);
+    /* Cor secundária */
+}
+
+/* --- 4. Seção de Contato (Botões estilo "Ghost") --- */
+.contact-section {
+    text-align: center;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+/* Botões "Ghost" (moderno) */
+.contact-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background-color: transparent;
+    /* Fundo transparente */
+    border: 2px solid var(--card-color);
+    /* Apenas borda */
+    color: var(--font-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    /* Transição completa */
+}
+
+.contact-links a:hover {
+    background-color: var(--primary-color-solid);
+    /* Preenche no hover */
+    border-color: var(--primary-color-solid);
+    /* Muda cor da borda */
+    color: #fff;
+    transform: translateY(-3px);
+    /* Efeito de "subir" */
+}
+
+.contact-links a i {
+    font-size: 1.3rem;
+}
+
+/* --- Rodapé --- */
+#footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--font-color-secondary);
+    /* Cor secundária */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    /* Borda sutil */
+}
+
+/* --- Botão "Ver Mais" (com Gradiente) --- */
+.see-more-btn {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 0 auto;
+    padding: 14px 35px;
+    /* Ligeiramente maior */
+    background: var(--primary-gradient);
+    /* Fundo em gradiente */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.see-more-btn:hover {
+    transform: translateY(-4px) scale(1.03);
+    /* Efeito de "pulo" */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Estilos do Modal (com Efeito "Blur") --- */
+.modal-open {
+    overflow: hidden;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fundo com transparência e blur (muito moderno) */
+    background: rgba(17, 24, 39, 0.8);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    position: relative;
+    background: var(--bg-color);
+    /* Fundo escuro */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Borda mais clara */
+    width: 100%;
+    max-width: 1200px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 12px;
+    /* Mais arredondado */
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Sombra forte */
+}
+
+.modal-content h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    /* Já pega o estilo de gradiente global, perfeito! */
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2.5rem;
+    color: var(--font-color-secondary);
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.modal-close-btn:hover {
+    color: var(--font-color);
+}
+
+/* --- Responsividade (Ajustes finos) --- */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 0;
+        /* Diminui o padding em telas menores */
+    }
+
+    .hero-section h1 {
+        font-size: 2.8rem;
+        /* Ajusta o título principal */
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    h2 {
+        font-size: 2.2rem;
+        /* Ajusta títulos de seção */
+    }
+
+    .projects-section .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-media-section .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .modal-content {
+        padding: 40px 20px;
+        /* Menos padding lateral no modal */
+    }
+}

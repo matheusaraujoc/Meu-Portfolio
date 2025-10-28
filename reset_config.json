@@ -1,0 +1,97 @@
+{
+    "siteTitle": "Meu Portfólio de Edição",
+    "favicon": "assets/favicon.png",
+    "hero": {
+        "enabled": true,
+        "title": "Matheus Araújo",
+        "subtitle": "Editor de Vídeo"
+    },
+    "projects": {
+        "enabled": true,
+        "title": "Projetos Principais",
+        "featuredCount": 2,
+        "videos": [
+            {
+                "title": "Cliente X - Institucional",
+                "description": "Edição e color grading para o vídeo institucional da Empresa X.",
+                "type": "youtube",
+                "id_or_url": "dQw4w9WgXcQ"
+            },
+            {
+                "title": "Documentário Y",
+                "description": "Projeto pessoal filmado e editado em DaVinci Resolve.",
+                "type": "gdrive",
+                "id_or_url": "https://drive.google.com/file/d/1SLPE1jHgafMtcP33iamywsvG6znJ1Zjz/view?usp=sharing"
+            },
+            {
+                "title": "Cliente Z - Clipe",
+                "description": "Edição e montagem para clipe musical.",
+                "type": "youtube",
+                "id_or_url": "L_LUpnjgPso"
+            },
+            {
+                "title": "Outro Projeto (Galeria)",
+                "description": "Este só aparece na galeria.",
+                "type": "youtube",
+                "id_or_url": "OG_ui43jGg"
+            }
+        ]
+    },
+    "socialMedia": {
+        "enabled": true,
+        "title": "Mídias Sociais",
+        "featuredCount": 3,
+        "videos": [
+            {
+                "title": "Reel - Dica Rápida",
+                "description": "Corte dinâmico para Instagram.",
+                "type": "drive",
+                "id_or_url": "https://drive.google.com/file/d/1SLPE1jHgafMtcP33iamywsvG6znJ1Zjz/view?usp=sharing"
+            },
+            {
+                "title": "Corte de Podcast",
+                "description": "Edição com legendas dinâmicas.",
+                "type": "gdrive",
+                "id_or_url": "https://drive.google.com/file/d/1SLPE1jHgafMtcP33iamywsvG6znJ1Zjz/view?usp=sharing"
+            },
+            {
+                "title": "Reel Cliente A",
+                "description": "Vídeo vertical para campanha.",
+                "type": "youtube",
+                "id_or_url": "1YxwzdR5A64"
+            },
+            {
+                "title": "Reel Cliente B (Galeria)",
+                "description": "Este só aparece na galeria.",
+                "type": "youtube",
+                "id_or_url": "https://www.youtube.com/watch?v=d9vy91veYbU&list=RDd9vy91veYbU&start_radio=1"
+            }
+        ]
+    },
+    "contact": {
+        "enabled": true,
+        "title": "Vamos Conversar?",
+        "links": [
+            {
+                "name": "WhatsApp",
+                "url": "https://wa.me/5598988827057",
+                "icon": "fab fa-whatsapp"
+            },
+            {
+                "name": "Email",
+                "url": "mailto:mscarvalho0523@gmail.com",
+                "icon": "fas fa-envelope"
+            },
+            {
+                "name": "Instagram",
+                "url": "https://instagram.com/seu_usuario",
+                "icon": "fab fa-instagram"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://linkedin.com/in/seu_usuario",
+                "icon": "fab fa-linkedin"
+            }
+        ]
+    }
+}

@@ -1,0 +1,91 @@
+{
+    "siteTitle": "Meu Portfólio de Edição",
+    "favicon": "assets/favicon.png",
+    "hero": {
+        "enabled": true,
+        "title": "Matheus Araújo",
+        "subtitle": "Editor de Vídeo"
+    },
+    "projects": {
+        "enabled": true,
+        "title": "Projetos Principais",
+        "featuredCount": 2,
+        "videos": [
+            {
+                "title": "Corte de Podcast",
+                "description": "Corte dinâmico de podcast.",
+                "type": "youtube",
+                "id_or_url": "https://youtu.be/Zqt7vsuyvWE?si=S8hYgTXSC4zZqYPf"
+            },
+            {
+                "title": "Documentário Y",
+                "description": "Projeto pessoal filmado e editado em DaVinci Resolve.",
+                "type": "gdrive",
+                "id_or_url": "https://drive.google.com/file/d/1SLPE1jHgafMtcP33iamywsvG6znJ1Zjz/view?usp=sharing"
+            },
+            {
+                "title": "Cliente Z - Clipe",
+                "description": "Edição e montagem para clipe musical.",
+                "type": "youtube",
+                "id_or_url": "L_LUpnjgPso"
+            },
+            {
+                "title": "Outro Projeto (Galeria)",
+                "description": "Este só aparece na galeria.",
+                "type": "youtube",
+                "id_or_url": "OG_ui43jGg"
+            }
+        ]
+    },
+    "socialMedia": {
+        "enabled": true,
+        "title": "Mídias Sociais",
+        "featuredCount": 3,
+        "videos": [
+            {
+                "title": "Corte de Podcast",
+                "description": "Corte dinâmico de podcast.",
+                "type": "drive",
+                "id_or_url": "https://drive.google.com/file/d/1SLPE1jHgafMtcP33iamywsvG6znJ1Zjz/view?usp=sharing"
+            },
+            {
+                "title": "Corte de Podcast",
+                "description": "Edição com legendas dinâmicas.",
+                "type": "vimeo",
+                "id_or_url": "https://vimeo.com/1131144720?share=copy&fl=sv&fe=ci"
+            },
+            {
+                "title": "Corte de Podcast",
+                "description": "Corte dinâmico de podcast.",
+                "type": "youtube",
+                "id_or_url": "https://www.youtube.com/shorts/uI7p5ODpnLA"
+            }
+        ]
+    },
+    "contact": {
+        "enabled": true,
+        "title": "Vamos Conversar?",
+        "links": [
+            {
+                "name": "WhatsApp",
+                "url": "https://wa.me/5598988827057",
+                "icon": "fab fa-whatsapp"
+            },
+            {
+                "name": "Email",
+                "url": "mailto:mscarvalho0523@gmail.com",
+                "icon": "fas fa-envelope"
+            },
+            {
+                "name": "Instagram",
+                "url": "https://instagram.com/seu_usuario",
+                "icon": "fab fa-instagram"
+            },
+            {
+                "name": "LinkedIn",
+                "url": "https://linkedin.com/in/seu_usuario",
+                "icon": "fab fa-linkedin"
+            }
+        ]
+    }
+}
