@@ -24,6 +24,10 @@ async function loadPortfolio() {
         buildMainPage(config, mainContainer);
         setupModalListeners();
 
+        // ===== NOVO: CHAMA A FUNÇÃO DE ANIMAÇÃO =====
+        setupScrollAnimations();
+        // =============================================
+
     } catch (error) {
         console.error("Não foi possível carregar o arquivo de configuração:", error);
         document.getElementById('app-container').innerHTML =
@@ -361,4 +365,41 @@ function buildContact(container, contactConfig) {
 
     section.appendChild(linksDiv);
     container.appendChild(section);
+}
+
+
+// ======================================================
+// ===== NOVA FUNÇÃO PARA ANIMAÇÃO DE SCROLL (REVEAL) =====
+// ======================================================
+
+/**
+ * Configura o IntersectionObserver para animar elementos ao rolar.
+ */
+function setupScrollAnimations() {
+    // Cria o observador
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                // Elemento entrou na tela -> Adiciona 'visible'
+                entry.target.classList.add('visible');
+            } else {
+                // Elemento saiu da tela -> Remove 'visible' (para o efeito reverso)
+                entry.target.classList.remove('visible');
+            }
+        });
+    }, {
+        threshold: 0.1 // Ativa quando 10% do item estiver visível
+    });
+
+    // Encontra TODOS os elementos que queremos animar na página principal
+    // (Não animamos os do modal, apenas os da página principal)
+    const elementsToAnimate = document.querySelectorAll(
+        '.hero-section h1, .hero-section p, .portfolio-section h2, .video-card, .contact-section h2, .contact-links a'
+    );
+
+    // Adiciona a classe 'hidden' inicial em todos e começa a "assistir"
+    elementsToAnimate.forEach((el) => {
+        el.classList.add('hidden-on-scroll');
+        observer.observe(el);
+    });
 }
