@@ -38,7 +38,7 @@ function setupGlobalConfig(config) {
     document.title = config.siteTitle || "Portfólio";
     if (config.favicon) {
         let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
-        link.type = 'image/png';
+        link.type = 'image/ico';
         link.rel = 'shortcut icon';
         link.href = config.favicon;
         document.getElementsByTagName('head')[0].appendChild(link);
